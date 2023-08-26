@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC39CF612A99ECBA0034C288 /* ThaiFlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */; };
+		FC39CF632A99ECBA0034C288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF622A99ECBA0034C288 /* ContentView.swift */; };
+		FC39CF652A99ECBF0034C288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC39CF642A99ECBF0034C288 /* Assets.xcassets */; };
+		FC39CF692A99ECBF0034C288 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC39CF682A99ECBF0034C288 /* Preview Assets.xcassets */; };
+		FC39CF732A99ECC00034C288 /* ThaiFlashCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF722A99ECC00034C288 /* ThaiFlashCardsTests.swift */; };
+		FC39CF7D2A99ECC00034C288 /* ThaiFlashCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF7C2A99ECC00034C288 /* ThaiFlashCardsUITests.swift */; };
+		FC39CF7F2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC39CF6F2A99ECC00034C288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC39CF552A99ECB90034C288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC39CF5C2A99ECB90034C288;
+			remoteInfo = ThaiFlashCards;
+		};
+		FC39CF792A99ECC00034C288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC39CF552A99ECB90034C288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC39CF5C2A99ECB90034C288;
+			remoteInfo = ThaiFlashCards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC39CF5D2A99ECB90034C288 /* ThaiFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsApp.swift; sourceTree = "<group>"; };
+		FC39CF622A99ECBA0034C288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC39CF642A99ECBF0034C288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC39CF662A99ECBF0034C288 /* ThaiFlashCards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThaiFlashCards.entitlements; sourceTree = "<group>"; };
+		FC39CF682A99ECBF0034C288 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC39CF6E2A99ECC00034C288 /* ThaiFlashCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThaiFlashCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC39CF722A99ECC00034C288 /* ThaiFlashCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsTests.swift; sourceTree = "<group>"; };
+		FC39CF782A99ECC00034C288 /* ThaiFlashCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThaiFlashCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC39CF7C2A99ECC00034C288 /* ThaiFlashCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsUITests.swift; sourceTree = "<group>"; };
+		FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC39CF5A2A99ECB90034C288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF6B2A99ECC00034C288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF752A99ECC00034C288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC39CF542A99ECB90034C288 = {
+			isa = PBXGroup;
+			children = (
+				FC39CF5F2A99ECBA0034C288 /* ThaiFlashCards */,
+				FC39CF712A99ECC00034C288 /* ThaiFlashCardsTests */,
+				FC39CF7B2A99ECC00034C288 /* ThaiFlashCardsUITests */,
+				FC39CF5E2A99ECB90034C288 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC39CF5E2A99ECB90034C288 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF5D2A99ECB90034C288 /* ThaiFlashCards.app */,
+				FC39CF6E2A99ECC00034C288 /* ThaiFlashCardsTests.xctest */,
+				FC39CF782A99ECC00034C288 /* ThaiFlashCardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC39CF5F2A99ECBA0034C288 /* ThaiFlashCards */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */,
+				FC39CF622A99ECBA0034C288 /* ContentView.swift */,
+				FC39CF642A99ECBF0034C288 /* Assets.xcassets */,
+				FC39CF662A99ECBF0034C288 /* ThaiFlashCards.entitlements */,
+				FC39CF672A99ECBF0034C288 /* Preview Content */,
+			);
+			path = ThaiFlashCards;
+			sourceTree = "<group>";
+		};
+		FC39CF672A99ECBF0034C288 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF682A99ECBF0034C288 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC39CF712A99ECC00034C288 /* ThaiFlashCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF722A99ECC00034C288 /* ThaiFlashCardsTests.swift */,
+			);
+			path = ThaiFlashCardsTests;
+			sourceTree = "<group>";
+		};
+		FC39CF7B2A99ECC00034C288 /* ThaiFlashCardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF7C2A99ECC00034C288 /* ThaiFlashCardsUITests.swift */,
+				FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */,
+			);
+			path = ThaiFlashCardsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC39CF5C2A99ECB90034C288 /* ThaiFlashCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC39CF822A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCards" */;
+			buildPhases = (
+				FC39CF592A99ECB90034C288 /* Sources */,
+				FC39CF5A2A99ECB90034C288 /* Frameworks */,
+				FC39CF5B2A99ECB90034C288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThaiFlashCards;
+			productName = ThaiFlashCards;
+			productReference = FC39CF5D2A99ECB90034C288 /* ThaiFlashCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC39CF6D2A99ECC00034C288 /* ThaiFlashCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC39CF852A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCardsTests" */;
+			buildPhases = (
+				FC39CF6A2A99ECC00034C288 /* Sources */,
+				FC39CF6B2A99ECC00034C288 /* Frameworks */,
+				FC39CF6C2A99ECC00034C288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC39CF702A99ECC00034C288 /* PBXTargetDependency */,
+			);
+			name = ThaiFlashCardsTests;
+			productName = ThaiFlashCardsTests;
+			productReference = FC39CF6E2A99ECC00034C288 /* ThaiFlashCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC39CF772A99ECC00034C288 /* ThaiFlashCardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC39CF882A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCardsUITests" */;
+			buildPhases = (
+				FC39CF742A99ECC00034C288 /* Sources */,
+				FC39CF752A99ECC00034C288 /* Frameworks */,
+				FC39CF762A99ECC00034C288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC39CF7A2A99ECC00034C288 /* PBXTargetDependency */,
+			);
+			name = ThaiFlashCardsUITests;
+			productName = ThaiFlashCardsUITests;
+			productReference = FC39CF782A99ECC00034C288 /* ThaiFlashCardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC39CF552A99ECB90034C288 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					FC39CF5C2A99ECB90034C288 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					FC39CF6D2A99ECC00034C288 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = FC39CF5C2A99ECB90034C288;
+					};
+					FC39CF772A99ECC00034C288 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = FC39CF5C2A99ECB90034C288;
+					};
+				};
+			};
+			buildConfigurationList = FC39CF582A99ECB90034C288 /* Build configuration list for PBXProject "ThaiFlashCards" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC39CF542A99ECB90034C288;
+			productRefGroup = FC39CF5E2A99ECB90034C288 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC39CF5C2A99ECB90034C288 /* ThaiFlashCards */,
+				FC39CF6D2A99ECC00034C288 /* ThaiFlashCardsTests */,
+				FC39CF772A99ECC00034C288 /* ThaiFlashCardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC39CF5B2A99ECB90034C288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC39CF692A99ECBF0034C288 /* Preview Assets.xcassets in Resources */,
+				FC39CF652A99ECBF0034C288 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF6C2A99ECC00034C288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF762A99ECC00034C288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC39CF592A99ECB90034C288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC39CF632A99ECBA0034C288 /* ContentView.swift in Sources */,
+				FC39CF612A99ECBA0034C288 /* ThaiFlashCardsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF6A2A99ECC00034C288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC39CF732A99ECC00034C288 /* ThaiFlashCardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC39CF742A99ECC00034C288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC39CF7D2A99ECC00034C288 /* ThaiFlashCardsUITests.swift in Sources */,
+				FC39CF7F2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC39CF702A99ECC00034C288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC39CF5C2A99ECB90034C288 /* ThaiFlashCards */;
+			targetProxy = FC39CF6F2A99ECC00034C288 /* PBXContainerItemProxy */;
+		};
+		FC39CF7A2A99ECC00034C288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC39CF5C2A99ECB90034C288 /* ThaiFlashCards */;
+			targetProxy = FC39CF792A99ECC00034C288 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FC39CF802A99ECC00034C288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC39CF812A99ECC00034C288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FC39CF832A99ECC00034C288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ThaiFlashCards/ThaiFlashCards.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ThaiFlashCards/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC39CF842A99ECC00034C288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ThaiFlashCards/ThaiFlashCards.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ThaiFlashCards/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC39CF862A99ECC00034C288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThaiFlashCards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThaiFlashCards";
+			};
+			name = Debug;
+		};
+		FC39CF872A99ECC00034C288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThaiFlashCards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThaiFlashCards";
+			};
+			name = Release;
+		};
+		FC39CF892A99ECC00034C288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ThaiFlashCards;
+			};
+			name = Debug;
+		};
+		FC39CF8A2A99ECC00034C288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.ThaiFlashCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ThaiFlashCards;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC39CF582A99ECB90034C288 /* Build configuration list for PBXProject "ThaiFlashCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC39CF802A99ECC00034C288 /* Debug */,
+				FC39CF812A99ECC00034C288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC39CF822A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC39CF832A99ECC00034C288 /* Debug */,
+				FC39CF842A99ECC00034C288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC39CF852A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC39CF862A99ECC00034C288 /* Debug */,
+				FC39CF872A99ECC00034C288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC39CF882A99ECC00034C288 /* Build configuration list for PBXNativeTarget "ThaiFlashCardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC39CF892A99ECC00034C288 /* Debug */,
+				FC39CF8A2A99ECC00034C288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC39CF552A99ECB90034C288 /* Project object */;
+}
