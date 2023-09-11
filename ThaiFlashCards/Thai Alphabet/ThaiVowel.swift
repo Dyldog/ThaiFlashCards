@@ -65,8 +65,8 @@ extension ThaiVowel: CardDisplayable {
     
     var cardContent: CardContent {
         return (
-            .largeText(self.script),
-            .largeTextWithFooter(self.sound, self.length.title)
+            .init(.largeText(self.script)),
+            .init(.largeTextWithFooter(self.sound, self.length.title))
         )
     }
 }

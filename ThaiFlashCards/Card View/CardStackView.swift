@@ -51,7 +51,7 @@ class CardStackViewModel: ObservableObject {
     private func speakTopCard() {
         guard let index = cards.indices.last else { return }
         let card = cards[index]
-        let text = (card.isFlipped ? card.backContent : card.frontContent).text
+        let text = (card.isFlipped ? card.backContent : card.frontContent).spokenText
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "th")
 

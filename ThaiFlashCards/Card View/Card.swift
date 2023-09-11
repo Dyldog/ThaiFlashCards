@@ -57,7 +57,7 @@ struct Card: View {
     }
     
     private func content() -> some View {
-        switch model.isFlipped ? model.backContent : model.frontContent {
+        switch model.isFlipped ? model.backContent.content : model.frontContent.content {
         case let .regularText(text):
             return AnyView(
                 Text(text)
@@ -101,8 +101,8 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     private static func makeCard(
-        front: CardFace = .largeText(":)"),
-        back: CardFace = .regularText("Asfdgdfg ddfjkgn dfgjdngjkdf gndg dfg d gdfg dfg dfg."),
+        front: CardFace = .init(.largeText(":)")),
+        back: CardFace = .init(.regularText("Asfdgdfg ddfjkgn dfgjdngjkdf gndg dfg d gdfg dfg dfg.")),
         isFlipped: Bool = false
     ) -> some View {
         Card(model: .init(
@@ -121,11 +121,11 @@ struct Card_Previews: PreviewProvider {
         Group {
             makeCard(isFlipped: false)
             makeCard(isFlipped: true)
-            makeCard(front: .sectionedText([
+            makeCard(front: .init(.sectionedText([
                 ("Hello", "World"),
                 ("A Thing:", "sdfsd fjkbn isbdfu isdhubfisduyfbs")
-            ]))
-            makeCard(front: .largeTextWithFooter("A", "letter"))
+            ])))
+            makeCard(front: .init(.largeTextWithFooter("A", "letter")))
         }
     }
 }

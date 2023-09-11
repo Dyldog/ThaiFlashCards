@@ -24,6 +24,7 @@ enum ThaiConsontantClass {
 
 struct ThaiConsonant {
     let script: String
+    let name: String
     let initialSound: String
     let finalSound: String
     let `class`: ThaiConsontantClass
@@ -83,17 +84,17 @@ extension ThaiConsonant: CardDisplayable {
                 fatalError("Could not make type from line: \($0)")
             }
             return .init(
-                script: columns[0], initialSound: columns[4], finalSound: columns[5], class: type
+                script: columns[0], name: columns[1], initialSound: columns[4], finalSound: columns[5], class: type
             )
         }
     
     var cardContent: CardContent {
         return (
-            .largeText(self.script),
-            .sectionedText([
+            .init(.largeText(self.script), alternateSpokenText: self.name),
+            .init(.sectionedText([
                 ("Initial sound:", self.initialSound),
                 ("Final sound:", self.finalSound)
-            ])
+            ]))
         )
     }
 }
