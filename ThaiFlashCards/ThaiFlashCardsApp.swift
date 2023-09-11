@@ -11,7 +11,10 @@ import SwiftUI
 struct ThaiFlashCardsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                SetListView()
+                    .navigationTitle("Thai")
+            }
         }
     }
 }

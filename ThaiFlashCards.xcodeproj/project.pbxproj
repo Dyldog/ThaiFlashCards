@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		FC39CF612A99ECBA0034C288 /* ThaiFlashCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */; };
-		FC39CF632A99ECBA0034C288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF622A99ECBA0034C288 /* ContentView.swift */; };
+		FC39CF632A99ECBA0034C288 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF622A99ECBA0034C288 /* CardStackView.swift */; };
 		FC39CF652A99ECBF0034C288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC39CF642A99ECBF0034C288 /* Assets.xcassets */; };
 		FC39CF692A99ECBF0034C288 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC39CF682A99ECBF0034C288 /* Preview Assets.xcassets */; };
 		FC39CF732A99ECC00034C288 /* ThaiFlashCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF722A99ECC00034C288 /* ThaiFlashCardsTests.swift */; };
 		FC39CF7D2A99ECC00034C288 /* ThaiFlashCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF7C2A99ECC00034C288 /* ThaiFlashCardsUITests.swift */; };
 		FC39CF7F2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */; };
+		FC39CF8C2A99F0A10034C288 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF8B2A99F0A10034C288 /* Card.swift */; };
+		FC39CF8E2A99FD2E0034C288 /* ThaiLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39CF8D2A99FD2E0034C288 /* ThaiLetter.swift */; };
+		FCDC19CC2AAF2BC50003A161 /* ThaiConsonant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19CB2AAF2BC50003A161 /* ThaiConsonant.swift */; };
+		FCDC19CF2AAF339C0003A161 /* ThaiVowel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19CE2AAF339B0003A161 /* ThaiVowel.swift */; };
+		FCDC19D12AAF39160003A161 /* CardFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19D02AAF39160003A161 /* CardFace.swift */; };
+		FCDC19D32AAF39260003A161 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19D22AAF39260003A161 /* CardModel.swift */; };
+		FCDC19D52AAF39E80003A161 /* Iffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19D42AAF39E80003A161 /* Iffable.swift */; };
+		FCDC19D82AAF3D030003A161 /* SetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19D72AAF3D030003A161 /* SetListView.swift */; };
+		FCDC19DC2AAF40890003A161 /* CardDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19DB2AAF40890003A161 /* CardDisplayable.swift */; };
+		FCDC19DE2AAF442B0003A161 /* ThaiWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19DD2AAF442B0003A161 /* ThaiWord.swift */; };
+		FCDC19E12AAF448D0003A161 /* ThaiWord+Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19E02AAF448D0003A161 /* ThaiWord+Colours.swift */; };
+		FCDC19E32AAF4C870003A161 /* ThaiWord+Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19E22AAF4C870003A161 /* ThaiWord+Animals.swift */; };
+		FCDC19E52AAF4EA20003A161 /* ThaiWord+HouseholdItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19E42AAF4EA20003A161 /* ThaiWord+HouseholdItems.swift */; };
+		FCDC19E72AAF53170003A161 /* ThaiWord+Prepositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19E62AAF53170003A161 /* ThaiWord+Prepositions.swift */; };
+		FCDC19E92AAF55680003A161 /* ThaiWord+FruitsVegetables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19E82AAF55680003A161 /* ThaiWord+FruitsVegetables.swift */; };
+		FCDC19EB2AAF593A0003A161 /* ThaiWord+Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19EA2AAF593A0003A161 /* ThaiWord+Places.swift */; };
+		FCDC19ED2AAF59940003A161 /* ThaiWord+Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19EC2AAF59940003A161 /* ThaiWord+Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +53,7 @@
 /* Begin PBXFileReference section */
 		FC39CF5D2A99ECB90034C288 /* ThaiFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsApp.swift; sourceTree = "<group>"; };
-		FC39CF622A99ECBA0034C288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC39CF622A99ECBA0034C288 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		FC39CF642A99ECBF0034C288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC39CF662A99ECBF0034C288 /* ThaiFlashCards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ThaiFlashCards.entitlements; sourceTree = "<group>"; };
 		FC39CF682A99ECBF0034C288 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +62,23 @@
 		FC39CF782A99ECC00034C288 /* ThaiFlashCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThaiFlashCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC39CF7C2A99ECC00034C288 /* ThaiFlashCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsUITests.swift; sourceTree = "<group>"; };
 		FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiFlashCardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC39CF8B2A99F0A10034C288 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FC39CF8D2A99FD2E0034C288 /* ThaiLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiLetter.swift; sourceTree = "<group>"; };
+		FCDC19CB2AAF2BC50003A161 /* ThaiConsonant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiConsonant.swift; sourceTree = "<group>"; };
+		FCDC19CE2AAF339B0003A161 /* ThaiVowel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiVowel.swift; sourceTree = "<group>"; };
+		FCDC19D02AAF39160003A161 /* CardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFace.swift; sourceTree = "<group>"; };
+		FCDC19D22AAF39260003A161 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		FCDC19D42AAF39E80003A161 /* Iffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iffable.swift; sourceTree = "<group>"; };
+		FCDC19D72AAF3D030003A161 /* SetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListView.swift; sourceTree = "<group>"; };
+		FCDC19DB2AAF40890003A161 /* CardDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplayable.swift; sourceTree = "<group>"; };
+		FCDC19DD2AAF442B0003A161 /* ThaiWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThaiWord.swift; sourceTree = "<group>"; };
+		FCDC19E02AAF448D0003A161 /* ThaiWord+Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+Colours.swift"; sourceTree = "<group>"; };
+		FCDC19E22AAF4C870003A161 /* ThaiWord+Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+Animals.swift"; sourceTree = "<group>"; };
+		FCDC19E42AAF4EA20003A161 /* ThaiWord+HouseholdItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+HouseholdItems.swift"; sourceTree = "<group>"; };
+		FCDC19E62AAF53170003A161 /* ThaiWord+Prepositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+Prepositions.swift"; sourceTree = "<group>"; };
+		FCDC19E82AAF55680003A161 /* ThaiWord+FruitsVegetables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+FruitsVegetables.swift"; sourceTree = "<group>"; };
+		FCDC19EA2AAF593A0003A161 /* ThaiWord+Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+Places.swift"; sourceTree = "<group>"; };
+		FCDC19EC2AAF59940003A161 /* ThaiWord+Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThaiWord+Questions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				FC39CF602A99ECBA0034C288 /* ThaiFlashCardsApp.swift */,
-				FC39CF622A99ECBA0034C288 /* ContentView.swift */,
+				FCDC19D72AAF3D030003A161 /* SetListView.swift */,
+				FCDC19D62AAF3CED0003A161 /* Card View */,
+				FCDC19CD2AAF2BDB0003A161 /* Thai Alphabet */,
+				FCDC19DF2AAF44800003A161 /* Word Lists */,
+				FCDC19D42AAF39E80003A161 /* Iffable.swift */,
 				FC39CF642A99ECBF0034C288 /* Assets.xcassets */,
 				FC39CF662A99ECBF0034C288 /* ThaiFlashCards.entitlements */,
 				FC39CF672A99ECBF0034C288 /* Preview Content */,
@@ -127,6 +165,43 @@
 				FC39CF7E2A99ECC00034C288 /* ThaiFlashCardsUITestsLaunchTests.swift */,
 			);
 			path = ThaiFlashCardsUITests;
+			sourceTree = "<group>";
+		};
+		FCDC19CD2AAF2BDB0003A161 /* Thai Alphabet */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF8D2A99FD2E0034C288 /* ThaiLetter.swift */,
+				FCDC19CB2AAF2BC50003A161 /* ThaiConsonant.swift */,
+				FCDC19CE2AAF339B0003A161 /* ThaiVowel.swift */,
+				FCDC19DD2AAF442B0003A161 /* ThaiWord.swift */,
+			);
+			path = "Thai Alphabet";
+			sourceTree = "<group>";
+		};
+		FCDC19D62AAF3CED0003A161 /* Card View */ = {
+			isa = PBXGroup;
+			children = (
+				FC39CF8B2A99F0A10034C288 /* Card.swift */,
+				FCDC19DB2AAF40890003A161 /* CardDisplayable.swift */,
+				FCDC19D02AAF39160003A161 /* CardFace.swift */,
+				FCDC19D22AAF39260003A161 /* CardModel.swift */,
+				FC39CF622A99ECBA0034C288 /* CardStackView.swift */,
+			);
+			path = "Card View";
+			sourceTree = "<group>";
+		};
+		FCDC19DF2AAF44800003A161 /* Word Lists */ = {
+			isa = PBXGroup;
+			children = (
+				FCDC19E02AAF448D0003A161 /* ThaiWord+Colours.swift */,
+				FCDC19E22AAF4C870003A161 /* ThaiWord+Animals.swift */,
+				FCDC19E42AAF4EA20003A161 /* ThaiWord+HouseholdItems.swift */,
+				FCDC19E62AAF53170003A161 /* ThaiWord+Prepositions.swift */,
+				FCDC19E82AAF55680003A161 /* ThaiWord+FruitsVegetables.swift */,
+				FCDC19EA2AAF593A0003A161 /* ThaiWord+Places.swift */,
+				FCDC19EC2AAF59940003A161 /* ThaiWord+Questions.swift */,
+			);
+			path = "Word Lists";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +334,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC39CF632A99ECBA0034C288 /* ContentView.swift in Sources */,
+				FC39CF8E2A99FD2E0034C288 /* ThaiLetter.swift in Sources */,
+				FCDC19E12AAF448D0003A161 /* ThaiWord+Colours.swift in Sources */,
+				FCDC19E72AAF53170003A161 /* ThaiWord+Prepositions.swift in Sources */,
+				FCDC19D82AAF3D030003A161 /* SetListView.swift in Sources */,
+				FCDC19DC2AAF40890003A161 /* CardDisplayable.swift in Sources */,
+				FCDC19DE2AAF442B0003A161 /* ThaiWord.swift in Sources */,
+				FC39CF632A99ECBA0034C288 /* CardStackView.swift in Sources */,
+				FC39CF8C2A99F0A10034C288 /* Card.swift in Sources */,
+				FCDC19D52AAF39E80003A161 /* Iffable.swift in Sources */,
+				FCDC19CF2AAF339C0003A161 /* ThaiVowel.swift in Sources */,
+				FCDC19ED2AAF59940003A161 /* ThaiWord+Questions.swift in Sources */,
 				FC39CF612A99ECBA0034C288 /* ThaiFlashCardsApp.swift in Sources */,
+				FCDC19E52AAF4EA20003A161 /* ThaiWord+HouseholdItems.swift in Sources */,
+				FCDC19E92AAF55680003A161 /* ThaiWord+FruitsVegetables.swift in Sources */,
+				FCDC19D32AAF39260003A161 /* CardModel.swift in Sources */,
+				FCDC19D12AAF39160003A161 /* CardFace.swift in Sources */,
+				FCDC19CC2AAF2BC50003A161 /* ThaiConsonant.swift in Sources */,
+				FCDC19E32AAF4C870003A161 /* ThaiWord+Animals.swift in Sources */,
+				FCDC19EB2AAF593A0003A161 /* ThaiWord+Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
