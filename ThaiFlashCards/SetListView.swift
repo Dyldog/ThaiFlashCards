@@ -6,24 +6,23 @@
 //
 
 import SwiftUI
-
-typealias WordList = (title: String, content: [CardContent])
+import DylKit
 
 struct SetListViewModel {
-    let lists: [(title: String, content: [WordList])] = [
+    let lists: [(title: String, content: [CardSet])] = [
         ("Letters", [
-            ("Consonants", ThaiConsonant.allCases.cardContent),
-            ("Vowels", ThaiVowel.allCases.cardContent),
-            ("All Letters", ThaiLetter.allCases.cardContent)
+            .init("Consonants", ThaiConsonant.allCases.cardContent),
+            .init("Vowels", ThaiVowel.allCases.cardContent),
+            .init("All Letters", ThaiLetter.allCases.cardContent)
         ]),
         ("Words", [
-            ("Colours", ThaiWord.colours.cardContent),
-            ("Animals", ThaiWord.animals.cardContent),
-            ("Fruits & Vegetables", ThaiWord.fruitsAndVegetables.cardContent),
-            ("Places", ThaiWord.places.cardContent), 
-            ("Household Items", ThaiWord.houseHoldItems.cardContent),
-            ("Prepositions", ThaiWord.prepositions.cardContent),
-            ("Questions", ThaiWord.questions.cardContent)
+            .init("Colours", ThaiWord.colours.cardContent),
+            .init("Animals", ThaiWord.animals.cardContent),
+            .init("Fruits & Vegetables", ThaiWord.fruitsAndVegetables.cardContent),
+            .init("Places", ThaiWord.places.cardContent),
+            .init("Household Items", ThaiWord.houseHoldItems.cardContent),
+            .init("Prepositions", ThaiWord.prepositions.cardContent),
+            .init("Questions", ThaiWord.questions.cardContent)
         ])
     ]
 }
@@ -33,11 +32,11 @@ struct SetListView: View {
     
     var body: some View {
         List {
-            ForEach(Array(viewModel.lists.enumerated()), id: \.offset) { offset, section in
+            ForEach(enumerated: viewModel.lists) { offset, section in
                 Section(section.title) {
-                    ForEach(Array(section.content.enumerated()), id: \.offset) { offset, element in
+                    ForEach(enumerated: section.content) { offset, element in
                         NavigationLink {
-                            CardStackView(viewModel: .init(content: element.content))
+                            CardSetView(element)
                         } label: {
                             Text(element.title)
                                 .font(.largeTitle)

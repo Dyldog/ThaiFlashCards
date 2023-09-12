@@ -9,6 +9,7 @@ import SwiftUI
 import AVKit
 
 class CardStackViewModel: ObservableObject {
+    private var seenCards: [CardModel] = []
     @Published private(set) var cards: [CardModel]
     var cardIsFlipped: Bool { cards.last?.isFlipped ?? false }
     
@@ -42,7 +43,8 @@ class CardStackViewModel: ObservableObject {
         case false:
             cards[index].isFlipped = true
         case true:
-            cards.remove(at: index)
+            let topCard = cards.remove(at: index)
+            seenCards.append(topCard)
             speakTopCard()
         }
     }
@@ -62,6 +64,12 @@ class CardStackViewModel: ObservableObject {
         guard let index = cards.indices.last else { return }
         cards[index].isFlipped = false
     }
+    
+    func resetButtonTapped() {
+        cards = seenCards + cards
+        cards.indices.forEach { cards[$0].isFlipped = false }
+        seenCards = []
+    }
 }
 
 struct CardStackView: View {
@@ -71,6 +79,14 @@ struct CardStackView: View {
         HStack(alignment: .center) {
             Spacer()
             ZStack {
+                Button {
+                    viewModel.resetButtonTapped()
+                } label: {
+                    Image(systemName: "arrow.counterclockwise")
+                        .tint(.white)
+                        .font(.system(size: 32, weight: .bold))
+                }
+
                 ForEach(Array(viewModel.cards.enumerated()), id: \.element.id) { index, card in
                     
                     Card(

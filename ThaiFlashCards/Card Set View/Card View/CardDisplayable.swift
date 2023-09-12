@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias CardContent = (front: CardFace, back: CardFace)
+typealias CardContent = (front: CardFaceModel, back: CardFaceModel)
 
 protocol CardDisplayable {
     var cardContent: CardContent { get }

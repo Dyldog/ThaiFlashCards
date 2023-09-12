@@ -10,8 +10,8 @@ import SwiftUI
 
 struct CardModel: Identifiable {
     let id: UUID = .init()
-    let frontContent: CardFace
-    let backContent: CardFace
+    let frontContent: CardFaceModel
+    let backContent: CardFaceModel
     var isFlipped: Bool
     let onTap: () -> Void
     let onSpeakTap: () -> Void
