@@ -8,14 +8,20 @@
 import SwiftUI
 import DylKit
 
+struct SetListSection: Identifiable {
+    var id: String { title }
+    let title: String
+    let sets: [CardSet]
+}
+
 struct SetListViewModel {
-    let lists: [(title: String, content: [CardSet])] = [
-        ("Letters", [
+    let lists: [SetListSection] = [
+        .init(title: "Letters", sets: [
             .init("Consonants", ThaiConsonant.allCases.cardContent),
             .init("Vowels", ThaiVowel.allCases.cardContent),
             .init("All Letters", ThaiLetter.allCases.cardContent)
         ]),
-        ("Words", [
+        .init(title: "Words", sets: [
             .init("Colours", ThaiWord.colours.cardContent),
             .init("Animals", ThaiWord.animals.cardContent),
             .init("Fruits & Vegetables", ThaiWord.fruitsAndVegetables.cardContent),
@@ -47,9 +53,9 @@ struct SetListView: View {
     
     var body: some View {
         List {
-            ForEach(enumerated: viewModel.lists) { offset, section in
+            ForEach(viewModel.lists) { section in
                 Section(section.title) {
-                    ForEach(enumerated: section.content) { offset, element in
+                    ForEach(section.sets) { element in
                         makeRow(element)
                     }
                 }
