@@ -23,6 +23,7 @@
 		FCCCB6B02AB039BC00FDB104 /* CardSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB6AF2AB039BC00FDB104 /* CardSetView.swift */; };
 		FCCCB6B22AB047C600FDB104 /* CardContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB6B12AB047C600FDB104 /* CardContentLabel.swift */; };
 		FCCCB6B42AB0483000FDB104 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB6B32AB0483000FDB104 /* CardSet.swift */; };
+		FCCCB6B92AB6AEB400FDB104 /* TextFieldAlert in Frameworks */ = {isa = PBXBuildFile; productRef = FCCCB6B82AB6AEB400FDB104 /* TextFieldAlert */; };
 		FCDC19CC2AAF2BC50003A161 /* ThaiConsonant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19CB2AAF2BC50003A161 /* ThaiConsonant.swift */; };
 		FCDC19CF2AAF339C0003A161 /* ThaiVowel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19CE2AAF339B0003A161 /* ThaiVowel.swift */; };
 		FCDC19D12AAF39160003A161 /* CardFaceContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDC19D02AAF39160003A161 /* CardFaceContent.swift */; };
@@ -101,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCCB6AB2AB0367500FDB104 /* DylKit in Frameworks */,
+				FCCCB6B92AB6AEB400FDB104 /* TextFieldAlert in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +278,7 @@
 			name = ThaiFlashCards;
 			packageProductDependencies = (
 				FCCCB6AA2AB0367500FDB104 /* DylKit */,
+				FCCCB6B82AB6AEB400FDB104 /* TextFieldAlert */,
 			);
 			productName = ThaiFlashCards;
 			productReference = FC39CF5D2A99ECB90034C288 /* ThaiFlashCards.app */;
@@ -349,6 +352,9 @@
 				Base,
 			);
 			mainGroup = FC39CF542A99ECB90034C288;
+			packageReferences = (
+				FCCCB6B72AB6AEB400FDB104 /* XCRemoteSwiftPackageReference "TextFieldAlert" */,
+			);
 			productRefGroup = FC39CF5E2A99ECB90034C288 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -768,10 +774,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		FCCCB6B72AB6AEB400FDB104 /* XCRemoteSwiftPackageReference "TextFieldAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sochalewski/TextFieldAlert";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		FCCCB6AA2AB0367500FDB104 /* DylKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DylKit;
+		};
+		FCCCB6B82AB6AEB400FDB104 /* TextFieldAlert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCCCB6B72AB6AEB400FDB104 /* XCRemoteSwiftPackageReference "TextFieldAlert" */;
+			productName = TextFieldAlert;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

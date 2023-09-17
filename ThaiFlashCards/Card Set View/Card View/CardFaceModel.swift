@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardFaceModel {
+struct CardFaceModel: Codable {
     let content: CardFaceContent
     private let alternateSpokenText: String?
     

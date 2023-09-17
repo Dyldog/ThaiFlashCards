@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "textfieldalert",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sochalewski/TextFieldAlert",
+      "state" : {
+        "revision" : "f10c8a27cde60e1714f85041501344b916bf557e",
+        "version" : "1.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}

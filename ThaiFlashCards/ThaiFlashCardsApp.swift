@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DylKit
 
 @main
 struct ThaiFlashCardsApp: App {
@@ -17,4 +18,8 @@ struct ThaiFlashCardsApp: App {
             }
         }
     }
+}
+
+enum UserData: String, DefaultsKey {
+    case customLists = "CUSTOM_LISTS"
 }

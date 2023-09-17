@@ -25,24 +25,48 @@ struct SetListViewModel {
             .init("Questions", ThaiWord.questions.cardContent)
         ])
     ]
+    
+    @UserDefaultable(key: UserData.customLists) var customLists: [CardSet] = []
 }
 
 struct SetListView: View {
     let viewModel: SetListViewModel = .init()
+    
+    @State var modal: AnyView?
+    
+    @ViewBuilder
+    func makeRow(_ item: CardSet) -> some View {
+        NavigationLink {
+            CardSetView(item)
+        } label: {
+            Text(item.title)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+        }
+    }
     
     var body: some View {
         List {
             ForEach(enumerated: viewModel.lists) { offset, section in
                 Section(section.title) {
                     ForEach(enumerated: section.content) { offset, element in
-                        NavigationLink {
-                            CardSetView(element)
-                        } label: {
-                            Text(element.title)
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                        }
-                        
+                        makeRow(element)
+                    }
+                }
+            }
+            
+            Section("Custom Lists") {
+                ForEach(viewModel.customLists) { list in
+                    makeRow(list)
+                }
+                
+                Button {
+                    //
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Add")
+                        Spacer()
                     }
                 }
             }

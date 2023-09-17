@@ -7,7 +7,10 @@
 
 import Foundation
 
-typealias CardContent = (front: CardFaceModel, back: CardFaceModel)
+struct CardContent: Codable {
+    let front: CardFaceModel
+    let back: CardFaceModel
+}
 
 protocol CardDisplayable {
     var cardContent: CardContent { get }

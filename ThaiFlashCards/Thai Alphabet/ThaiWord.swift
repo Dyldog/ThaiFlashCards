@@ -13,5 +13,5 @@ struct ThaiWord {
 }
 
 extension ThaiWord: CardDisplayable {
-    var cardContent: CardContent { (.init(.largeText(script)), .init(.largeText(meaning))) }
+    var cardContent: CardContent { .init(front: .init(.largeText(script)), back: .init(.largeText(meaning))) }
 }

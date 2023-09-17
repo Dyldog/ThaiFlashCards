@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardSet {
+struct CardSet: Codable {
     let title: String
     let cards: [CardContent]
     
