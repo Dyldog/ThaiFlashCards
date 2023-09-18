@@ -32,6 +32,7 @@ struct CardStackView: View {
                 } else {
                     Button {
                         stack.reset()
+                        speakTop()
                     } label: {
                         Image(systemName: "arrow.counterclockwise")
                             .tint(.white)
