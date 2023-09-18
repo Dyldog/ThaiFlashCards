@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct CardContent: Codable, Equatable {
+struct CardContent: Codable, Equatable, Identifiable {
     let front: CardFaceModel
     let back: CardFaceModel
+    
+    var id: String { front.spokenText + back.spokenText }
 }
 
 protocol CardDisplayable {

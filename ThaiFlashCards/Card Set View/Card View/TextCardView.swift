@@ -30,7 +30,7 @@ struct TextCardView: View {
                         model.onUnflipTap()
                     } label: {
                         Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 24, weight: .bold))
+                            .font(.system(size: 24))
                             .imageScale(.medium)
                     }
                 } else {
@@ -38,7 +38,7 @@ struct TextCardView: View {
                         model.onSpeakTap()
                     } label: {
                         Image(systemName: "speaker.wave.2.fill")
-                            .font(.system(size: 24, weight: .bold))
+                            .font(.system(size: 24))
                             .imageScale(.medium)
                     }
                 }

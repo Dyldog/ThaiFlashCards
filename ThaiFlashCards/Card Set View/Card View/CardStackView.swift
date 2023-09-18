@@ -13,7 +13,7 @@ struct CardStackView: View {
     @State var speaker: Speaker
     @Binding var muted: Bool
     
-    init(stack: CardStack, shuffled: Bool = true, muted: Binding<Bool>) {
+    init(stack: CardStack, muted: Binding<Bool>) {
         self.stack = stack
         self._muted = muted
         self._speaker = .init(initialValue: .init())
@@ -65,6 +65,23 @@ struct CardStackView: View {
         .onAppear {
             speakTop()
         }
+        .toolbar {
+            ToolbarItem(placement: .bottomBar) {
+                HStack {
+                    Spacer()
+                    Button {
+                        stack.readdLastSeen()
+                        speakTop()
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 24))
+                            .imageScale(.medium)
+                    }
+                }.if(!stack.hasSeenCards) {
+                    $0.hidden()
+                }
+            }
+        }
     }
     
     private func speakTop() {
@@ -85,7 +102,7 @@ struct CardStackView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CardStackView(stack: .init(cards: ThaiLetter.allCases.cardContent, shuffled: true), muted: .init(constant: false))
+        CardStackView(stack: .init(cards: ThaiLetter.allCases.cardContent), muted: .init(constant: false))
             .previewLayout(.device)
     }
 }

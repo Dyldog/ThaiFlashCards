@@ -30,13 +30,14 @@ struct CardSetView: View {
     init(_ set: Binding<CardSet>) {
         self._muted = .init(initialValue: false)
         self._set = set
-        self._stack = .init(wrappedValue: .init(cards: set.wrappedValue.cards, shuffled: true))
+        self._stack = .init(wrappedValue: .init(cards: set.wrappedValue.cards.if(true, mapper: { $0.shuffled() })))
     }
     
     var body: some View {
         ZStack {
             if mode == .cards {
                 CardStackView(stack: stack, muted: $muted)
+                    .onAppear { stack.setCards(set.cards, reset: false) }
             } else if mode == .list {
                 WordListView(viewModel: .init(title: set.title, cards: $set.cards))
             }
@@ -84,6 +85,7 @@ struct CardSetView: View {
     
     func addCard(_ card: CardContent) {
         set = .init(title: set.title, cards: set.cards + [card])
+        stack.addCardToTop(card)
     }
 }
 

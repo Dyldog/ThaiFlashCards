@@ -9,91 +9,109 @@ import SwiftUI
 import DylKit
 import TextFieldAlert
 
-struct SetListSection: Identifiable {
-    var id: String { title }
-    let title: String
-    var sets: [CardSet]
-}
-
 struct SetListView: View {
     
+    @Environment(\.editMode) private var editMode
     @State var viewModel: SetListViewModel = .init()
     
-    @State var showAddAlert: Bool = false
+    @State var showAddTypeSheet: Bool = false
+    @State var showAddCardSetAlert: Bool = false
+    @State var showAddHeaderAlert: Bool = false
     @State var alert: AlertModel?
-    
-    @ViewBuilder
-    func makeRow(_ item: Binding<CardSet>) -> some View {
-        NavigationLink {
-            CardSetView(item)
-        } label: {
-            HStack {
-                Text(item.wrappedValue.title)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                Spacer()
-                
-                ZStack {
-                    Image(systemName: "rectangle.portrait.fill").font(.system(size: 36))
-                    Text("\(item.cards.count)").font(.footnote).fontWeight(.bold).foregroundColor(.white)
-                }.shuffledPosition(rotationRange: -5 ... 5, positionRange: -3 ... 3)
-            }
-        }
-    }
     
     var body: some View {
         List {
-            ForEach($viewModel.lists) { section in
-                Section(section.wrappedValue.title) {
-                    ForEach(section.sets) { element in
-                        makeRow(element)
-                    }
-                }
+            ForEach(enumerated: $viewModel.rows) { _, row in
+                view(for: row)
             }
-            
-            Section("Custom Lists") {
-                ForEach($viewModel.customLists) { list in
-                    makeRow(list)
-                }.onDelete { indices in
-                    guard let index = indices.first else { return }
-                    let list = viewModel.customLists[index]
-                    
-                    func doDelete() {
-                        viewModel.customLists.remove(atOffsets: indices)
-                    }
-                    
-                    guard !list.cards.isEmpty else { return doDelete() }
-                    
+            .onMove(perform: { viewModel.rows.move(fromOffsets: $0, toOffset: $1) })
+            .onDelete { indices in
+                guard let index = indices.first else { return }
+                let row = viewModel.rows[index]
+
+                func doDelete() {
+                    viewModel.rows.remove(atOffsets: indices)
+                }
+
+                var title: String?
+                var message: String?
+
+                if case let .cardSet(set) = row {
+                    guard !set.cards.isEmpty else { return doDelete() }
+
+                    title = "Are you sure you want to delete \"\(set.title)\"?"
+                    message = "This set contains \(set.cards.count) \("card".pluralise(set.cards.count))"
+                } else if case let .sectionHeader(name) = row {
+                    title = "Are you sure you want to delete the header \"\(name)\"?"
+                    message = nil
+                }
+
+                if let title = title {
                     alert = .init(
-                        title: "Are you sure you want to delete \"\(list.title)\"?",
-                        message: "This set contains \(list.cards.count) \("card".pluralise(list.cards.count))",
+                        title: title,
+                        message: message,
                         primaryAction: .destructive(Text("Delete"), action: {
                             doDelete()
                         }),
                         secondaryAction: .cancel()
                     )
                 }
+            }
+            
                 
-                Button {
-                    showAddAlert = true
-                } label: {
-                    HStack {
-                        Spacer()
-                        Text("Add").fontWeight(.bold).foregroundColor(.blue)
-                        Spacer()
-                    }
+            Button {
+                showAddTypeSheet = true
+            } label: {
+                HStack {
+                    Spacer()
+                    Text("Add").fontWeight(.bold).foregroundColor(.blue)
+                    Spacer()
                 }
             }
-        }.textFieldAlert(
-            title: "Add Custom List",
-            textFields: [.init(placeholder: "List name")],
+            .moveDisabled(true)
+            .disabled(editMode?.wrappedValue.isEditing == true)
+        }
+        .textFieldAlert(
+            title: "Add Card Set",
+            textFields: [.init(placeholder: "Set name")],
             actions: [.init(title: "OK", closure: { strings in
                 guard let name = strings.first, !name.isEmpty else { return }
                 viewModel.addCustomList(name)
             })],
-            isPresented: $showAddAlert
+            isPresented: $showAddCardSetAlert
+        )
+        .textFieldAlert(
+            title: "Add Header",
+            textFields: [.init(placeholder: "Title")],
+            actions: [.init(title: "OK", closure: { strings in
+                guard let name = strings.first, !name.isEmpty else { return }
+                viewModel.rows.append(.sectionHeader(name))
+            })],
+            isPresented: $showAddHeaderAlert
         )
         .alert($alert)
+        .confirmationDialog("Add", isPresented: $showAddTypeSheet, actions: {
+            Button { showAddCardSetAlert = true } label: { Text("Card Set") }
+            Button { showAddHeaderAlert = true } label: { Text("Section Header") }
+        })
+        .toolbar {
+            HStack {
+                EditButton()
+            }
+        }
+
+    }
+    
+    func view(for row: Binding<SetListRow>) -> AnyView {
+        switch row.wrappedValue {
+        case let .cardSet(set):
+            return AnyView(CardSetRow(item: .init(get: {
+                return set
+            }, set: {
+                row.wrappedValue = .cardSet($0)
+            })))
+        case let .sectionHeader(title):
+            return AnyView(Text(title))
+        }
     }
 }

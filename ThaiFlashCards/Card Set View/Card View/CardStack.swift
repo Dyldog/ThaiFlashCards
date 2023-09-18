@@ -8,20 +8,18 @@
 import Foundation
 
 class CardStack: ObservableObject {
-    private var allCards: [CardContent]
+    @Published private var allCards: [CardContent]
     
     @Published private(set) var remainingCards: [CardContent]
     private var seenCards: [CardContent]
     
     var topCard: CardContent? { remainingCards.last }
     @Published var topIsFlipped: Bool = false
-    
-    let shuffled: Bool
-    
+        
     var isEmpty: Bool { allCards.isEmpty }
+    var hasSeenCards: Bool { !seenCards.isEmpty }
     
-    init(cards: [CardContent], shuffled: Bool) {
-        self.shuffled = shuffled
+    init(cards: [CardContent]) {
         self.allCards = cards
         self.remainingCards = []
         self.seenCards = []
@@ -29,9 +27,14 @@ class CardStack: ObservableObject {
         reset()
     }
     
-    func setCards(_ cards: [CardContent]) {
+    func setCards(_ cards: [CardContent], reset: Bool = true) {
         allCards = cards
-        reset()
+        if reset { self.reset() }
+    }
+    
+    func addCardToTop(_ card: CardContent) {
+        allCards.append(card)
+        remainingCards.append(card)
     }
     
     func cardIsFlipped(_ card: CardContent) -> Bool {
@@ -41,12 +44,20 @@ class CardStack: ObservableObject {
             return false
         }
     }
+    
     func visibleFace(for card: CardContent) -> CardFaceModel {
         return cardIsFlipped(card) ? card.back : card.front
     }
     
     func flipTop() {
         topIsFlipped.toggle()
+    }
+    
+    func readdLastSeen() {
+        guard let index = seenCards.indices.last else { return }
+        let last = seenCards.remove(at: index)
+        remainingCards.append(last)
+        topIsFlipped = false
     }
     
     func removeTop() {
@@ -69,10 +80,6 @@ class CardStack: ObservableObject {
     func reset() {
         remainingCards = allCards
         topIsFlipped = false
-        
-        if shuffled {
-            remainingCards.shuffle()
-        }
         
         seenCards = []
     }

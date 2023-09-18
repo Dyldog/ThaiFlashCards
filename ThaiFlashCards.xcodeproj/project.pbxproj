@@ -25,6 +25,7 @@
 		FC6285CA2AB81DDF009B579E /* TitledValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6285C92AB81DDF009B579E /* TitledValue.swift */; };
 		FC6285CC2AB81DF4009B579E /* Binding+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6285CB2AB81DF4009B579E /* Binding+Constant.swift */; };
 		FC6285CF2AB81F7D009B579E /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6285CE2AB81F7D009B579E /* AlertModel.swift */; };
+		FC6285D32AB83643009B579E /* CardSetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6285D22AB83642009B579E /* CardSetRow.swift */; };
 		FC811E712AAF6370006F17B7 /* CardFaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC811E702AAF6370006F17B7 /* CardFaceModel.swift */; };
 		FCCCB6A62AB0328100FDB104 /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCCB6A52AB0328100FDB104 /* WordListView.swift */; };
 		FCCCB6AB2AB0367500FDB104 /* DylKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCCCB6AA2AB0367500FDB104 /* DylKit */; };
@@ -92,6 +93,7 @@
 		FC6285C92AB81DDF009B579E /* TitledValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledValue.swift; sourceTree = "<group>"; };
 		FC6285CB2AB81DF4009B579E /* Binding+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Constant.swift"; sourceTree = "<group>"; };
 		FC6285CE2AB81F7D009B579E /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		FC6285D22AB83642009B579E /* CardSetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetRow.swift; sourceTree = "<group>"; };
 		FC811E702AAF6370006F17B7 /* CardFaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFaceModel.swift; sourceTree = "<group>"; };
 		FCCCB6A52AB0328100FDB104 /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
 		FCCCB6A82AB0365C00FDB104 /* DylKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DylKit; path = ../DylKit; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				FCDC19D72AAF3D030003A161 /* SetListView.swift */,
 				FC6285C22AB81D1F009B579E /* SetListViewModel.swift */,
+				FC6285D22AB83642009B579E /* CardSetRow.swift */,
 			);
 			path = "Set List View";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				FC6285C32AB81D1F009B579E /* SetListViewModel.swift in Sources */,
 				FC6285C82AB81DB7009B579E /* CardStack.swift in Sources */,
 				FC6285C12AB81D01009B579E /* Speaker.swift in Sources */,
+				FC6285D32AB83643009B579E /* CardSetRow.swift in Sources */,
 				FCCCB6B22AB047C600FDB104 /* CardContentLabel.swift in Sources */,
 				FCDC19EB2AAF593A0003A161 /* ThaiWord+Places.swift in Sources */,
 			);
