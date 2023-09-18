@@ -22,4 +22,5 @@ struct ThaiFlashCardsApp: App {
 
 enum UserData: String, DefaultsKey {
     case customLists = "CUSTOM_LISTS"
+    case muted = "MUTED"
 }

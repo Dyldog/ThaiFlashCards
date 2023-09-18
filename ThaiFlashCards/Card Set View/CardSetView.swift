@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DylKit
 
 struct CardSetView: View {
     enum Mode {
@@ -23,21 +24,31 @@ struct CardSetView: View {
     @State var mode: Mode = .cards
     @Binding var set: CardSet
     @State var showAddView: Bool = false
+    @State var muted: Bool
+    @StateObject var stack: CardStack
     
     init(_ set: Binding<CardSet>) {
+        self._muted = .init(initialValue: false)
         self._set = set
+        self._stack = .init(wrappedValue: .init(cards: set.wrappedValue.cards, shuffled: true))
     }
     
     var body: some View {
         ZStack {
-            CardStackView(content: set.cards)
-                .if(mode != .cards) { $0.hidden() }
-            
-            WordListView(viewModel: .init(title: set.title, cards: $set.cards))
-                .if(mode != .list) { $0.hidden() }
+            if mode == .cards {
+                CardStackView(stack: stack, muted: $muted)
+            } else if mode == .list {
+                WordListView(viewModel: .init(title: set.title, cards: $set.cards))
+            }
         }
         .toolbar {
             HStack {
+                Button {
+                    muted.toggle()
+                } label: {
+                    Image(systemName: muted ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                }
+                
                 Button {
                     showAddView = true
                 } label: {

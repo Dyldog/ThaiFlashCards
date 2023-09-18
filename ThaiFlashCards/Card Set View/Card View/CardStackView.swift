@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import DylKit
 
 struct CardStackView: View {
     @ObservedObject var stack: CardStack
     @State var speaker: Speaker
+    @Binding var muted: Bool
     
-    init(content: [CardContent], shuffled: Bool = true) {
-        self.speaker = .init()
-        self.stack = .init(cards: content, shuffled: shuffled)
+    init(stack: CardStack, shuffled: Bool = true, muted: Binding<Bool>) {
+        self.stack = stack
+        self._muted = muted
+        self._speaker = .init(initialValue: .init())
     }
     
     var body: some View {
@@ -64,6 +67,7 @@ struct CardStackView: View {
     }
     
     private func speakTop() {
+        guard !muted else { return }
         guard let top = stack.topCard else { return }
         speaker.speak(stack.visibleFace(for: top).spokenText)
     }
@@ -80,7 +84,7 @@ struct CardStackView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CardStackView(content: ThaiLetter.allCases.cardContent)
+        CardStackView(stack: .init(cards: ThaiLetter.allCases.cardContent, shuffled: true), muted: .init(constant: false))
             .previewLayout(.device)
     }
 }
