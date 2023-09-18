@@ -32,15 +32,29 @@ struct WordListRow: View {
 
 struct WordListView: View {
     let viewModel: WordListViewModel
+    @State var editingWord: CardContent? = nil
     
     var body: some View {
         List {
-            ForEach(viewModel.cards.sorted(by: { $0.front.spokenText < $1.front.spokenText })) {
-                WordListRow(card: $0)
+            ForEach(viewModel.cards.sorted(by: { $0.front.spokenText < $1.front.spokenText })) { card in
+                WordListRow(card: card)
+                    .onTapGesture {
+                        editingWord = card
+                    }
             }.onDelete {
                 viewModel.cards.remove(atOffsets: $0)
             }
         }
         .navigationTitle(viewModel.title)
+        .fullScreenCover(item: $editingWord) { editingCard in
+            AddCardView(frontText: editingCard.front.spokenText, backText: editingCard.back.spokenText) { newCard in
+                if let newCard = newCard {
+                    guard let index = viewModel.cards.firstIndex(where: { $0 == editingCard }) else { return }
+                    viewModel.$cards.wrappedValue[index] = newCard
+                }
+                
+                editingWord = nil
+            }
+        }
     }
 }
