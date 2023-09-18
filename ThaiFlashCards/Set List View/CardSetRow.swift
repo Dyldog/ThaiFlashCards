@@ -21,8 +21,7 @@ extension SetListView {
             } label: {
                 HStack {
                     Text(item.wrappedValue.title)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.system(size: 24, weight: .bold))
                     
                     Spacer()
                     
