@@ -7,9 +7,30 @@
 
 import Foundation
 
-enum CardFaceContent: Codable {
+extension TitledValue: Equatable where T: Equatable {
+    static func == (lhs: TitledValue<T>, rhs: TitledValue<T>) -> Bool {
+        return lhs.title == rhs.title && lhs.value == rhs.value
+    }
+}
+
+enum CardFaceContent: Codable, Equatable {
+    static func == (lhs: CardFaceContent, rhs: CardFaceContent) -> Bool {
+        switch (lhs, rhs) {
+        case let (.regularText(lhsText), .regularText(rhsText)):
+            return lhsText == rhsText
+        case let (.sectionedText(lhsSections), .sectionedText(rhsSections)):
+            return lhsSections == rhsSections
+        case let (.largeText(lhsText), .largeText(rhsText)):
+            return lhsText == rhsText
+        case let (.largeTextWithFooter(lhsText, lhsFooter), .largeTextWithFooter(rhsText, rhsFooter)):
+            return lhsText == rhsText && lhsFooter == rhsFooter
+        case (.regularText, _), (.sectionedText, _), (.largeText, _), (.largeTextWithFooter, _):
+            return false
+        }
+    }
+    
     case regularText(String)
-    case sectionedText([(title: String, value: String)])
+    case sectionedText([TitledValue<String>])
     case largeText(String)
     case largeTextWithFooter(String, String)
     
@@ -35,7 +56,7 @@ enum CardFaceContent: Codable {
         if let regularTextString = try container.decodeIfPresent(String.self, forKey: .regularTextString) {
             self = .regularText(regularTextString)
         } else if let sectionedTextDict = try container.decodeIfPresent([String: String].self, forKey: .sectionedTextDict) {
-            self = .sectionedText(sectionedTextDict.map { ($0.key, $0.value) })
+            self = .sectionedText(sectionedTextDict.map { .init(title: $0.key, value: $0.value) })
         } else if let largeTextString = try container.decodeIfPresent(String.self, forKey: .largeTextString) {
             if let footer = try container.decodeIfPresent(String.self, forKey: .largeTextFooter) {
                 self = .largeTextWithFooter(largeTextString, footer)

@@ -16,4 +16,6 @@ struct CardModel: Identifiable {
     let onTap: () -> Void
     let onSpeakTap: () -> Void
     let onUnflipTap: () -> Void
+    
+    var visibleContent: CardFaceModel { isFlipped ? backContent : frontContent }
 }

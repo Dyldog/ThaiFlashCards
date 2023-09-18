@@ -11,48 +11,56 @@ struct CardSetView: View {
     enum Mode {
         case cards
         case list
+        
+        var imageName: String {
+            switch self {
+            case .cards: return "list.bullet"
+            case .list: return "note.text"
+            }
+        }
     }
     
     @State var mode: Mode = .cards
-    @State var cardView: CardStackView
-    @State var listView: WordListView
+    @Binding var set: CardSet
+    @State var showAddView: Bool = false
     
-    var currentView: some View {
-        switch mode {
-        case .cards: return AnyView(cardView)
-        case .list: return AnyView(listView)
-        }
-    }
-    
-    var currentSwitchButtonImage: Image {
-        let name: String
-        
-        switch mode {
-        case .cards: name = "list.bullet"
-        case .list: name = "note.text"
-        }
-        
-        return Image(systemName: name)
-    }
-    
-    init(_ set: CardSet) {
-        self.cardView = .init(viewModel: .init(content: set.cards))
-        self.listView = .init(viewModel: .init(title: set.title, cards: set.cards))
+    init(_ set: Binding<CardSet>) {
+        self._set = set
     }
     
     var body: some View {
-        currentView
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        switchModes()
-                    } label: {
-                        currentSwitchButtonImage
-                    }
-
+        ZStack {
+            CardStackView(content: set.cards)
+                .if(mode != .cards) { $0.hidden() }
+            
+            WordListView(viewModel: .init(title: set.title, cards: $set.cards))
+                .if(mode != .list) { $0.hidden() }
+        }
+        .toolbar {
+            HStack {
+                Button {
+                    showAddView = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+                
+                Button {
+                    switchModes()
+                } label: {
+                    Image(systemName: mode.imageName)
                 }
             }
-            .navigationBarTitleDisplayMode(mode == .list ? .automatic : .large)
+        }
+        .navigationBarTitleDisplayMode(mode == .list ? .automatic : .large)
+        .fullScreenCover(isPresented: $showAddView) {
+            AddCardView(onAdd: {
+                showAddView = false
+                
+                if let item = $0 {
+                    addCard(item)
+                }
+            })
+        }
     }
     
     func switchModes() {
@@ -61,6 +69,10 @@ struct CardSetView: View {
         } else {
             mode = .cards
         }
+    }
+    
+    func addCard(_ card: CardContent) {
+        set = .init(title: set.title, cards: set.cards + [card])
     }
 }
 

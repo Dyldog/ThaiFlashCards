@@ -92,8 +92,8 @@ extension ThaiConsonant: CardDisplayable {
         return .init(
             front: .init(.largeText(self.script), alternateSpokenText: self.name),
             back: .init(.sectionedText([
-                ("Initial sound:", self.initialSound),
-                ("Final sound:", self.finalSound)
+                .init(title: "Initial sound:", value: self.initialSound),
+                .init(title: "Final sound:", value: self.finalSound)
             ]))
         )
     }

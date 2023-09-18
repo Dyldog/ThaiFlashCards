@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardContent: Codable {
+struct CardContent: Codable, Equatable {
     let front: CardFaceModel
     let back: CardFaceModel
 }

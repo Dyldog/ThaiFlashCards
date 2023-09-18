@@ -6,99 +6,50 @@
 //
 
 import SwiftUI
-import AVKit
-
-class CardStackViewModel: ObservableObject {
-    private var seenCards: [CardModel] = []
-    @Published private(set) var cards: [CardModel]
-    var cardIsFlipped: Bool { cards.last?.isFlipped ?? false }
-    
-    init(content: [CardContent], shuffled: Bool = true) {
-        cards = []
-        cards = content.if(shuffled) { $0.shuffled() }
-            .map {
-                .init(
-                    frontContent: $0.front,
-                    backContent: $0.back,
-                    isFlipped: false,
-                    onTap: { [weak self] in
-                        self?.topCardTapped()
-                    }, onSpeakTap: { [weak self] in
-                        self?.speakTopCard()
-                    }, onUnflipTap: { [weak self] in
-                        self?.topCardUnflipTapped()
-                    }
-                )
-        }
-    }
-    
-    func onAppear() {
-        speakTopCard()
-    }
-    
-    private func topCardTapped() {
-        guard let index = cards.indices.last else { return }
-        
-        switch cards[index].isFlipped {
-        case false:
-            cards[index].isFlipped = true
-        case true:
-            let topCard = cards.remove(at: index)
-            seenCards.append(topCard)
-            speakTopCard()
-        }
-    }
-    
-    var speechSynth: AVSpeechSynthesizer?
-    private func speakTopCard() {
-        guard let index = cards.indices.last else { return }
-        let card = cards[index]
-        let text = (card.isFlipped ? card.backContent : card.frontContent).spokenText
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "th")
-
-        speechSynth = AVSpeechSynthesizer()
-        speechSynth?.speak(utterance)
-    }
-    private func topCardUnflipTapped() {
-        guard let index = cards.indices.last else { return }
-        cards[index].isFlipped = false
-    }
-    
-    func resetButtonTapped() {
-        cards = seenCards + cards
-        cards.indices.forEach { cards[$0].isFlipped = false }
-        seenCards = []
-    }
-}
 
 struct CardStackView: View {
-    @StateObject var viewModel: CardStackViewModel
+    @ObservedObject var stack: CardStack
+    @State var speaker: Speaker
+    
+    init(content: [CardContent], shuffled: Bool = true) {
+        self.speaker = .init()
+        self.stack = .init(cards: content, shuffled: shuffled)
+    }
     
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
             ZStack {
-                Button {
-                    viewModel.resetButtonTapped()
-                } label: {
-                    Image(systemName: "arrow.counterclockwise")
-                        .tint(.white)
-                        .font(.system(size: 32, weight: .bold))
+                if stack.isEmpty {
+                    Text("Add some cards by tapping the plus button")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: 200)
+                } else {
+                    Button {
+                        stack.reset()
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
+                            .tint(.white)
+                            .font(.system(size: 32, weight: .bold))
+                    }
                 }
-
-                ForEach(Array(viewModel.cards.enumerated()), id: \.element.id) { index, card in
-                    
-                    Card(
+    
+                ForEach(enumerated: stack.remainingCards) { index, card in
+                    TextCardView(
                         color:.init(white: brightness(forCardAtIndex: index)),
-                        model: card
+                        model: .init(
+                            frontContent: card.front,
+                            backContent: card.back,
+                            isFlipped: stack.cardIsFlipped(card),
+                            onTap: { stack.topTapped(onNewCard: { _ in speakTop() }) },
+                            onSpeakTap: { speaker.speak(stack.visibleFace(for: card).spokenText) },
+                            onUnflipTap: { stack.flipTop() }
+                        )
                     )
-                    .rotationEffect(.degrees(.random(in: -10 ... 10)))
-                    .offset(.init(
-                        width: .random(in: -20 ... 20),
-                        height: .random(in: -20 ... 20)
-                    ))
-
+                    .shuffledPosition()
+                    .animation(.easeOut(duration: 0.2))
                 }
             }
             .frame(height: 300)
@@ -108,12 +59,17 @@ struct CardStackView: View {
         .frame(maxHeight: .infinity)
         .background(Color.black)
         .onAppear {
-            viewModel.onAppear()
+            speakTop()
         }
     }
     
+    private func speakTop() {
+        guard let top = stack.topCard else { return }
+        speaker.speak(stack.visibleFace(for: top).spokenText)
+    }
+    
     private func brightness(forCardAtIndex index: Int) -> Double {
-        let numCards: Double = Double(viewModel.cards.count)
+        let numCards: Double = Double(stack.remainingCards.count)
         guard numCards > 1 else { return 1 }
         let brightnessStep = 1.0 / 100.0
         let distanceFromTop: Double = numCards - Double(index)
@@ -124,7 +80,7 @@ struct CardStackView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CardStackView(viewModel: .init(content: ThaiLetter.allCases.cardContent))
+        CardStackView(content: ThaiLetter.allCases.cardContent)
             .previewLayout(.device)
     }
 }

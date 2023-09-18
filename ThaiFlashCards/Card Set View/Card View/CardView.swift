@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct Card: View {
+struct CardView<Content: View>: View {
     let color: Color
-    let model: CardModel
+    let content: () -> Content
     
-    init(color: Color = .white, model: CardModel) {
+    init(color: Color = .white, content: @escaping () -> Content) {
         self.color = color
-        self.model = model
+        self.content = content
     }
     
     var body: some View {
@@ -23,37 +23,9 @@ struct Card: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color(white: 0.8))
             
-            VStack(alignment: .center) {
-                Spacer()
-                
-                CardFace(model: model.isFlipped ? model.backContent : model.frontContent)
-                
-                Spacer()
-                
-                if model.isFlipped {
-                    Button {
-                        model.onUnflipTap()
-                    } label: {
-                        Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 24, weight: .bold))
-                            .imageScale(.medium)
-                    }
-                } else {
-                    Button {
-                        model.onSpeakTap()
-                    } label: {
-                        Image(systemName: "speaker.wave.2.fill")
-                            .font(.system(size: 24, weight: .bold))
-                            .imageScale(.medium)
-                    }
-                }
-            }
-            .padding()
+            content().padding()
         }
         .aspectRatio(2.0 / 3.0, contentMode: .fit)
-        .onTapGesture {
-            model.onTap()
-        }
     }
 }
 
@@ -63,7 +35,7 @@ struct Card_Previews: PreviewProvider {
         back: CardFaceModel = .init(.regularText("Asfdgdfg ddfjkgn dfgjdngjkdf gndg dfg d gdfg dfg dfg.")),
         isFlipped: Bool = false
     ) -> some View {
-        Card(model: .init(
+        TextCardView(model: .init(
             frontContent: front,
             backContent: back,
             isFlipped: isFlipped,
@@ -80,8 +52,8 @@ struct Card_Previews: PreviewProvider {
             makeCard(isFlipped: false)
             makeCard(isFlipped: true)
             makeCard(front: .init(.sectionedText([
-                ("Hello", "World"),
-                ("A Thing:", "sdfsd fjkbn isbdfu isdhubfisduyfbs")
+                .init(title: "Hello", value: "World"),
+                .init(title: "A Thing:", value: "sdfsd fjkbn isbdfu isdhubfisduyfbs")
             ])))
             makeCard(front: .init(.largeTextWithFooter("A", "letter")))
         }

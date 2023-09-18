@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardFace: View {
+struct CardFaceView: View {
     let model: CardFaceModel
     
     var body: some View {

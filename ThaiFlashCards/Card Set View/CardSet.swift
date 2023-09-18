@@ -9,7 +9,7 @@ import Foundation
 
 struct CardSet: Codable {
     let title: String
-    let cards: [CardContent]
+    var cards: [CardContent]
     
     init(title: String, cards: [CardContent]) {
         self.title = title

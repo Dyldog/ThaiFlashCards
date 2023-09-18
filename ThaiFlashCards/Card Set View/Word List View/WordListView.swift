@@ -10,11 +10,11 @@ import DylKit
 
 struct WordListViewModel {
     let title: String
-    let cards: [CardContent]
+    @Binding var cards: [CardContent]
     
-    init(title: String, cards: [CardContent]) {
+    init(title: String, cards: Binding<[CardContent]>) {
         self.title = title
-        self.cards = cards.sorted(by: { $0.front.spokenText < $1.front.spokenText })
+        self._cards = cards
     }
 }
 
@@ -35,8 +35,10 @@ struct WordListView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.cards) {
+            ForEach(viewModel.cards.sorted(by: { $0.front.spokenText < $1.front.spokenText })) {
                 WordListRow(card: $0)
+            }.onDelete {
+                viewModel.cards.remove(atOffsets: $0)
             }
         }
         .navigationTitle(viewModel.title)
