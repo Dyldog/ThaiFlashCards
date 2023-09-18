@@ -67,7 +67,7 @@ struct SetListView: View {
                     
                     alert = .init(
                         title: "Are you sure you want to delete \"\(list.title)\"?",
-                        message: "This set contains \(list.cards.count) \("cards".pluralise(list.cards.count))",
+                        message: "This set contains \(list.cards.count) \("card".pluralise(list.cards.count))",
                         primaryAction: .destructive(Text("Delete"), action: {
                             doDelete()
                         }),
